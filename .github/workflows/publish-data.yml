@@ -13,8 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Fetch exact Android data source
+        env:
+          ANDROID_SOURCE_TOKEN: ${{ secrets.ANDROID_SOURCE_TOKEN }}
         run: |
-          git clone --depth 1 --branch data/v27-43-skin-tone https://github.com/novarisartifex/Novaris-Pokedex-Android.git android
+          if [ -z "$ANDROID_SOURCE_TOKEN" ]; then echo 'Missing ANDROID_SOURCE_TOKEN secret with read-only access to private Android repository'; exit 1; fi
+          git clone --depth 1 --branch data/v27-43-skin-tone https://x-access-token:${ANDROID_SOURCE_TOKEN}@github.com/novarisartifex/Novaris-Pokedex-Android.git android
           cd android
           cat native/v0.4.0/part*.b64 | base64 --decode > source.zip
           unzip -q source.zip -d appsrc
