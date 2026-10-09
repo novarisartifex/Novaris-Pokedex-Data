@@ -1,8 +1,14 @@
 {
   "schema_version": 1,
   "channel": "stable",
-  "status": "not_published",
-  "latest": null,
-  "packages": [],
-  "notes": "No downloadable dataset published yet. App must retain bundled offline database until a verified package exists."
+  "status": "published",
+  "latest": {
+    "data_version": 2743,
+    "source_version": "V27.43",
+    "min_app_version_code": 11,
+    "url": "https://github.com/novarisartifex/Novaris-Pokedex-Data/releases/download/data-v2743/pokedex.db.gzdata",
+    "sha256": "918083cfc0237ecf48984384af856f5057e4b889401c2f147421fc51344d942b",
+    "size_bytes": 14051469,
+    "pokemon_count": 1025
+  }
 }
