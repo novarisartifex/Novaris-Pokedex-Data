@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "channel": "stable",
+  "status": "not_published",
+  "latest": null,
+  "packages": [],
+  "notes": "No downloadable dataset published yet. App must retain bundled offline database until a verified package exists."
+}
